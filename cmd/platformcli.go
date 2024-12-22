@@ -1,4 +1,4 @@
-package platformcli
+package main
 
 import (
 	"context"

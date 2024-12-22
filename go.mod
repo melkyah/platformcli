@@ -1,4 +1,4 @@
-module platformcli
+module github.com/melkyah/platformcli
 
 go 1.23.4
 
