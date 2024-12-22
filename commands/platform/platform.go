@@ -17,9 +17,16 @@ var Commands = []*cli.Command{
 				Name:    "install",
 				Aliases: []string{"i"},
 				Usage:   "bootstraps a platform instance",
-				Action: func(ctx context.Context, cmd *cli.Command) error {
-					fmt.Println("new task template: ", cmd.Args().First())
-					return nil
+				Commands: []*cli.Command{
+					{
+						Name:    "demo",
+						Aliases: []string{"p"},
+						Usage:   "start a demo instance in a local cluster",
+						Action: func(ctx context.Context, cmd *cli.Command) error {
+							fmt.Println("new task template: ", cmd.Args().First())
+							return nil
+						},
+					},
 				},
 			},
 		},
