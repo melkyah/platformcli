@@ -1,2 +1,5 @@
 # platformcli
-A CLI tool to spin up and manage an infrastructure platform
+
+[![GoDoc](https://godoc.org/k8s.io/kubectl?status.svg)](https://godoc.org/k8s.io/kubectl)
+
+A learning repo to start work on a self-service infrastructure platform.
