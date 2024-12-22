@@ -4,4 +4,4 @@
 
 A learning repo to start work on a self-service infrastructure platform.
 
-This project used https://cli.urfave.org/
+This project uses https://cli.urfave.org/

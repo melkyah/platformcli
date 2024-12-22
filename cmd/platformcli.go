@@ -1,4 +1,4 @@
-package main
+package platformcli
 
 import (
 	"context"
@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/melkyah/platformcli/commands/platform"
+
 	"github.com/urfave/cli/v3"
 )
 
