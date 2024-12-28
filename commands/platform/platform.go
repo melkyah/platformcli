@@ -2,10 +2,11 @@ package platform
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/urfave/cli/v3"
 )
+
+var externalCLIActions = []string{"kind"}
 
 var Commands = []*cli.Command{
 	{
@@ -20,10 +21,10 @@ var Commands = []*cli.Command{
 				Commands: []*cli.Command{
 					{
 						Name:    "demo",
-						Aliases: []string{"p"},
-						Usage:   "start a demo instance in a local cluster",
+						Aliases: []string{"d"},
+						Usage:   "start a demo instance in a local or remote cluster",
 						Action: func(ctx context.Context, cmd *cli.Command) error {
-							fmt.Println("new task template: ", cmd.Args().First())
+							cmds.kind()
 							return nil
 						},
 					},
