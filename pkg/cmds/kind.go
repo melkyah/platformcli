@@ -10,8 +10,8 @@ import (
 	"sigs.k8s.io/kind/pkg/log"
 )
 
-func Kind() {
-	if err := Run(cmd.NewLogger(), cmd.StandardIOStreams(), os.Args[1:]); err != nil {
+func Kind(args []string) {
+	if err := Run(cmd.NewLogger(), cmd.StandardIOStreams(), args); err != nil {
 		os.Exit(1)
 	}
 }
