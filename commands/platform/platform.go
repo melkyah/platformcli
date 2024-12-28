@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/urfave/cli/v3"
-)
 
-var externalCLIActions = []string{"kind"}
+	"github.com/melkyah/platformcli/pkg/cmds"
+)
 
 var Commands = []*cli.Command{
 	{
@@ -24,10 +24,19 @@ var Commands = []*cli.Command{
 						Aliases: []string{"d"},
 						Usage:   "start a demo instance in a local or remote cluster",
 						Action: func(ctx context.Context, cmd *cli.Command) error {
-							cmds.kind()
+							cmds.Kind()
 							return nil
 						},
 					},
+				},
+			},
+			{
+				Name:    "uninstall",
+				Aliases: []string{"u"},
+				Usage:   "removes a platform instance",
+				Action: func(ctx context.Context, cmd *cli.Command) error {
+					cmds.Kind()
+					return nil
 				},
 			},
 		},
