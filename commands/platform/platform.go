@@ -8,6 +8,7 @@ import (
 	"github.com/urfave/cli/v3"
 
 	"github.com/melkyah/platformcli/pkg/cmds"
+	"github.com/melkyah/platformcli/pkg/helm"
 )
 
 var Commands = []*cli.Command{
@@ -73,14 +74,18 @@ func Uninstall(ctx context.Context, cmd *cli.Command) error {
 	if len(cmd.FlagNames()) == 0 {
 		log.Fatal("ERROR: Uninstall command currently only support runing with --demo flag")
 	} else if slices.Contains(cmd.FlagNames(), "demo") {
-		args := []string{
-			"delete",
-			"cluster",
-			"--name",
-			"platformcli",
-		}
-		cmds.Kind(args)
-		return nil
+		InstallDemo()
 	}
 	return nil
+}
+
+func InstallDemo() {
+	args := []string{
+		"delete",
+		"cluster",
+		"--name",
+		"platformcli",
+	}
+	cmds.Kind(args)
+	helm.Test()
 }
